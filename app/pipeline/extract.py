@@ -16,9 +16,9 @@ args: input_path (str): caminho com a pasta de arquivos
 return: lista de dataframes
 """
 
-path = '../data/'
+path = '../data/input/' 
 
-def extract_data(input_path: str) -> list[pd.DataFrame]:
+def extract_data(path: str) -> list[pd.DataFrame]:
     
     all_files = glob.glob(os.path.join(path, '*.xlsx'))
 
@@ -29,7 +29,6 @@ def extract_data(input_path: str) -> list[pd.DataFrame]:
         df_list.append(data)
 
     return df_list   
-
 
 if __name__ == '__main__':
     df_list = extract_data(path)
