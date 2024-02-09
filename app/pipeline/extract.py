@@ -8,17 +8,19 @@ import glob # biblioteca para listar arquivos
 import pandas as pd
 from typing import List
 
-"""
-Funcao para ler arquivos de uma pasta data e retornar uma lista de dataframes
 
-args: input_path (str): caminho com a pasta de arquivos
-
-return: lista de dataframes
-"""
 
 path = '../data/input/' 
 
 def extract_data(path: str) -> list[pd.DataFrame]:
+
+    """
+    Function which read .xlsx files in a folder and returns a list of dataframes.
+
+    args: input_path (str): path to the folder with .xlsx files.
+
+    return: list of dataframes.
+    """
     
     all_files = glob.glob(os.path.join(path, '*.xlsx'))
 
