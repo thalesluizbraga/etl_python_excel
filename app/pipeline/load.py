@@ -18,7 +18,7 @@ def load_df(df: pd.DataFrame, load_path: str, file_name: str) -> str: # Se eu de
         os.mkdir(load_path)
 
 
-    df = df.to_csv(f'{load_path}/{file_name}', index=False)
+    df = df.to_csv(f'{load_path}/{file_name}.csv', index=False)
 
 
 
