@@ -2,7 +2,7 @@ import pandas as pd
 from typing import List
 
 
-def concat_data_frames(df_list : list[pd.DataFrame]) -> pd.DataFrame:
+def concat_data_frames(df_list : list) -> pd.DataFrame:
  
     """
     Function to transform a list of dataframes into a unique dataframe.

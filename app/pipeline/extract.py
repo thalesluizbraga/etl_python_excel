@@ -10,9 +10,7 @@ from typing import List
 
 
 
-path = '../data/input/' 
-
-def extract_data(path: str) -> list[pd.DataFrame]:
+def extract_data(path: str) -> list:
 
     """
     Function which read .xlsx files in a folder and returns a list of dataframes.
@@ -21,17 +19,14 @@ def extract_data(path: str) -> list[pd.DataFrame]:
 
     return: list of dataframes.
     """
-    
-    all_files = glob.glob(os.path.join(path, '*.xlsx'))
-
     df_list = []
-
-    for file in all_files: 
-        data = pd.read_excel(file)
-        df_list.append(data)
-
+    for file in os.listdir(path):  
+        if file.endswith('.xlsx'):
+            df = pd.read_excel(os.path.join(path, file))
+            df_list.append(df)
     return df_list   
 
 if __name__ == '__main__':
+    path = '../data/input/' 
     df_list = extract_data(path)
     print(df_list)

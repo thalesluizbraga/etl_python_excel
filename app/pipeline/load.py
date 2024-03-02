@@ -16,10 +16,5 @@ def load_df(df: pd.DataFrame, load_path: str, file_name: str) -> str: # Se eu de
 
     if not os.path.exists(load_path):
         os.mkdir(load_path)
-
-
     df = df.to_csv(f'{load_path}/{file_name}.csv', index=False)
-
-
-
     return 'File generated with success!'
