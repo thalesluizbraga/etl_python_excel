@@ -1,10 +1,4 @@
-#lista arquivos em excel
-# jogar em dfs
-# ter uma lista de dfs
-
-import os # biblioteca para manipular arquivos e pastas
-import glob # biblioteca para listar arquivos
-
+import os 
 import pandas as pd
 from typing import List
 
@@ -24,7 +18,7 @@ def extract_data(path: str) -> list:
         if file.endswith('.xlsx'):
             df = pd.read_excel(os.path.join(path, file))
             df_list.append(df)
-    return df_list   
+    return df_list  
 
 if __name__ == '__main__':
     path = '../data/input/' 
